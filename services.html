@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>সার্ভিসসমূহ — E-Wallet Payment Gateway</title>
+  <meta name="description" content="bKash, Nagad, Rocket ও Binance এজেন্ট ম্যানেজমেন্ট, কমিশন ট্র্যাকিং এবং KYC ভেরিফিকেশন — সব এক প্ল্যাটফর্মে।" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { dark: { 900:'#0a0f1e', 800:'#0d1526', 700:'#111c32' } }, fontFamily: { bengali: ['Hind Siliguri', 'sans-serif'] } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Hind Siliguri', 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #22c55e, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-bg { background: linear-gradient(135deg, #0a0f1e 0%, #0d1a2e 50%, #0a1628 100%); }
+    .card-glow:hover { box-shadow: 0 0 40px rgba(34,197,94,0.2); transition: all 0.3s; }
+    .btn-glow { box-shadow: 0 0 20px rgba(34,197,94,0.4); }
+    .btn-glow:hover { box-shadow: 0 0 35px rgba(34,197,94,0.6); transform: translateY(-2px); transition: all 0.3s; }
+    .orb { border-radius:50%; filter:blur(80px); position:absolute; pointer-events:none; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+  </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-dark-900/80 border-b border-green-500/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center text-xl">💳</div>
+          <div><div class="text-white font-bold text-lg leading-tight">E-Wallet</div><div class="text-green-400 text-xs font-medium">Payment Gateway</div></div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">হোম</a>
+          <a href="services.html" class="text-green-400 font-medium text-sm border-b-2 border-green-400 pb-0.5">সার্ভিস</a>
+          <a href="how-it-works.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">কিভাবে কাজ করে</a>
+          <a href="trust.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">বিশ্বস্ততা</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="login.html" class="px-5 py-2 text-sm font-medium text-green-400 border border-green-500/50 rounded-lg hover:bg-green-500/10 transition-all">লগইন</a>
+          <a href="register.html" class="px-5 py-2 text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg btn-glow">রেজিস্ট্রেশন</a>
+        </div>
+        <button onclick="document.getElementById('m').classList.toggle('hidden')" class="md:hidden p-2 text-gray-400 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="m" class="hidden md:hidden bg-dark-800/95 border-t border-green-500/10 px-4 py-4 space-y-2">
+      <a href="index.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">হোম</a>
+      <a href="services.html" class="block py-2.5 px-4 rounded-lg text-green-400 bg-green-500/10">সার্ভিস</a>
+      <a href="how-it-works.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">কিভাবে কাজ করে</a>
+      <a href="trust.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">বিশ্বস্ততা</a>
+      <div class="flex gap-3 pt-2">
+        <a href="login.html" class="flex-1 text-center py-2.5 text-sm text-green-400 border border-green-500/50 rounded-lg">লগইন</a>
+        <a href="register.html" class="flex-1 text-center py-2.5 text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg">রেজিস্ট্রেশন</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="pt-32 pb-16 relative overflow-hidden">
+    <div class="orb w-80 h-80 bg-green-500/15 top-0 -right-20"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">সার্ভিস</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">আমাদের <span class="gradient-text">সার্ভিসসমূহ</span></h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">একটি প্ল্যাটফর্মে বাংলাদেশের সকল প্রধান পেমেন্ট গেটওয়ে — সম্পূর্ণ নিরাপদ ও কমপ্লায়েন্ট।</p>
+    </div>
+  </section>
+
+  <!-- PAYMENT GATEWAYS -->
+  <section class="pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-white mb-8 text-center">পেমেন্ট গেটওয়ে সার্ভিস</h2>
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <!-- bKash -->
+        <div class="bg-dark-700/40 border border-pink-500/20 rounded-2xl p-8 card-glow hover:border-pink-500/40 transition-all group">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-pink-500/30">📱</div>
+            <div>
+              <h3 class="text-2xl font-bold text-white">bKash Gateway</h3>
+              <span class="text-xs text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full font-medium">সক্রিয়</span>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-4">Personal, Merchant ও Agent — সব ধরণের bKash অ্যাকাউন্ট ম্যানেজ করুন।</p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Personal Account</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Merchant Account</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Agent Account</li>
+          </ul>
+        </div>
+        <!-- Nagad -->
+        <div class="bg-dark-700/40 border border-orange-500/20 rounded-2xl p-8 card-glow hover:border-orange-500/40 transition-all group">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-orange-500/30">💚</div>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Nagad Gateway</h3>
+              <span class="text-xs text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full font-medium">সক্রিয়</span>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-4">Nagad এর সকল ধরণের অ্যাকাউন্ট দিয়ে Deposit/Withdraw।</p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Personal Account</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Merchant Account</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Agent Account</li>
+          </ul>
+        </div>
+        <!-- Rocket -->
+        <div class="bg-dark-700/40 border border-purple-500/20 rounded-2xl p-8 card-glow hover:border-purple-500/40 transition-all group">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-purple-500/30">🚀</div>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Rocket Gateway</h3>
+              <span class="text-xs text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full font-medium">সক্রিয়</span>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-4">DBBL Rocket এর Personal, Merchant, Agent সাপোর্ট।</p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Personal Account</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Merchant Account</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Agent Account</li>
+          </ul>
+        </div>
+        <!-- Binance -->
+        <div class="bg-dark-700/40 border border-yellow-500/20 rounded-2xl p-8 card-glow hover:border-yellow-500/40 transition-all group">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-yellow-500/30">₿</div>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Binance USD</h3>
+              <span class="text-xs text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full font-medium">সক্রিয়</span>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-4">USD পেমেন্ট, Binance UID/Pay ID সহ স্ক্রিনশট ভেরিফিকেশন।</p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Binance UID</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Pay ID</li>
+            <li class="flex items-center gap-2 text-gray-300 text-sm"><span class="text-green-400">✓</span> Screenshot Verification</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Additional Services -->
+      <h2 class="text-2xl font-bold text-white mb-8 text-center">অতিরিক্ত সার্ভিস</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-dark-700/40 border border-green-500/10 rounded-2xl p-6 card-glow hover:border-green-500/30 transition-all text-center group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">👥</div>
+          <h3 class="font-bold text-white mb-2">এজেন্ট মনিটরিং</h3>
+          <p class="text-gray-400 text-sm">এজেন্ট অনবোর্ড করুন, মনিটর করুন ও অতিরিক্ত কমিশন উপার্জন করুন।</p>
+        </div>
+        <div class="bg-dark-700/40 border border-green-500/10 rounded-2xl p-6 card-glow hover:border-green-500/30 transition-all text-center group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">📊</div>
+          <h3 class="font-bold text-white mb-2">কমিশন ট্র্যাকিং</h3>
+          <p class="text-gray-400 text-sm">প্রতিটি লেনদেনের জন্য স্বচ্ছ ও রিয়েল-টাইম কমিশন রিপোর্ট।</p>
+        </div>
+        <div class="bg-dark-700/40 border border-green-500/10 rounded-2xl p-6 card-glow hover:border-green-500/30 transition-all text-center group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">📜</div>
+          <h3 class="font-bold text-white mb-2">লেনদেন হিস্ট্রি</h3>
+          <p class="text-gray-400 text-sm">সকল লেনদেনের সম্পূর্ণ হিস্ট্রি, ফিল্টার ও সার্চ সাপোর্ট।</p>
+        </div>
+        <div class="bg-dark-700/40 border border-green-500/10 rounded-2xl p-6 card-glow hover:border-green-500/30 transition-all text-center group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">🪪</div>
+          <h3 class="font-bold text-white mb-2">KYC ভেরিফিকেশন</h3>
+          <p class="text-gray-400 text-sm">NID, Passport, Driving License সহ সম্পূর্ণ পরিচয় যাচাইকরণ।</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="register.html" class="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg rounded-xl btn-glow hover:from-green-400 hover:to-green-500 transition-all">এখনই শুরু করুন</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-800/60 border-t border-green-500/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-3 w-fit">
+            <div class="w-9 h-9 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">💳</div>
+            <div><div class="text-white font-bold leading-tight">E-Wallet</div><div class="text-green-400 text-xs">Payment Gateway</div></div>
+          </a>
+          <p class="text-gray-500 text-sm">বাংলাদেশের এজেন্টদের জন্য নিরাপদ পেমেন্ট প্ল্যাটফর্ম।</p>
+        </div>
+        <div><h4 class="text-white font-semibold mb-3">প্ল্যাটফর্ম</h4><ul class="space-y-2"><li><a href="services.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">সার্ভিসসমূহ</a></li><li><a href="how-it-works.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">কিভাবে কাজ করে</a></li><li><a href="commission-rates.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">কমিশন গাইড</a></li><li><a href="login.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">লগইন</a></li><li><a href="register.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">রেজিস্ট্রেশন</a></li></ul></div>
+        <div><h4 class="text-white font-semibold mb-3">আইনি তথ্য</h4><ul class="space-y-2"><li><a href="terms.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Terms of Service</a></li><li><a href="privacy.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Privacy Policy</a></li><li><a href="privacy.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">KYC Policy</a></li><li><a href="terms.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">AML Notice</a></li><li><a href="official-notice.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Official Domain Notice</a></li><li><a href="contact.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Contact Us</a></li></ul></div>
+        <div><h4 class="text-white font-semibold mb-3">যোগাযোগ</h4><ul class="space-y-2"><li><a href="https://wa.me/447446316977" target="_blank" class="text-gray-500 hover:text-green-400 text-sm transition-colors">📱 WhatsApp</a></li><li><a href="https://t.me/ewalletbd247" target="_blank" class="text-gray-500 hover:text-green-400 text-sm transition-colors">✈️ @ewalletbd247</a></li><li><a href="mailto:support@ewalletpay24.com" class="text-gray-500 hover:text-green-400 text-sm transition-colors">📧 support@ewalletpay24.com</a></li><li><a href="tel:+447446316977" class="text-gray-500 hover:text-green-400 text-sm transition-colors">📞 +447446316977</a></li></ul></div>
+      </div>
+      <div class="border-t border-white/5 pt-6 text-center"><p class="text-gray-600 text-sm">© 2024 E-Wallet Payment Gateway. All rights reserved.</p></div>
+    </div>
+  </footer>
+</body>
+</html>

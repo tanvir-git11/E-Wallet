@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>লাইসেন্স ও বিশ্বস্ততা — E-Wallet Payment Gateway</title>
+  <meta name="description" content="বাংলাদেশ সরকার অনুমোদিত, লাইসেন্স প্রাপ্ত ও সম্পূর্ণ আইনসম্মত পেমেন্ট গেটওয়ে সার্ভিস।" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Hind Siliguri', 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #22c55e, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-bg { background: linear-gradient(135deg, #0a0f1e 0%, #0d1a2e 50%, #0a1628 100%); }
+    .btn-glow { box-shadow: 0 0 20px rgba(34,197,94,0.4); }
+    .btn-glow:hover { box-shadow: 0 0 35px rgba(34,197,94,0.6); transform: translateY(-2px); transition: all 0.3s; }
+    .orb { border-radius:50%; filter:blur(80px); position:absolute; pointer-events:none; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .card-glow:hover { box-shadow: 0 0 40px rgba(34,197,94,0.15); transition: all 0.3s; }
+    .counter { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-[#0a0f1e]/80 border-b border-green-500/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center text-xl">💳</div>
+          <div><div class="text-white font-bold text-lg leading-tight">E-Wallet</div><div class="text-green-400 text-xs font-medium">Payment Gateway</div></div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">হোম</a>
+          <a href="services.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">সার্ভিস</a>
+          <a href="how-it-works.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">কিভাবে কাজ করে</a>
+          <a href="trust.html" class="text-green-400 font-medium text-sm border-b-2 border-green-400 pb-0.5">বিশ্বস্ততা</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="login.html" class="px-5 py-2 text-sm font-medium text-green-400 border border-green-500/50 rounded-lg hover:bg-green-500/10 transition-all">লগইন</a>
+          <a href="register.html" class="px-5 py-2 text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg btn-glow">রেজিস্ট্রেশন</a>
+        </div>
+        <button onclick="document.getElementById('m').classList.toggle('hidden')" class="md:hidden p-2 text-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="m" class="hidden md:hidden bg-[#0d1526]/95 border-t border-green-500/10 px-4 py-4 space-y-2">
+      <a href="index.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">হোম</a>
+      <a href="services.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">সার্ভিস</a>
+      <a href="how-it-works.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">কিভাবে কাজ করে</a>
+      <a href="trust.html" class="block py-2.5 px-4 rounded-lg text-green-400 bg-green-500/10">বিশ্বস্ততা</a>
+      <div class="flex gap-3 pt-2">
+        <a href="login.html" class="flex-1 text-center py-2.5 text-sm text-green-400 border border-green-500/50 rounded-lg">লগইন</a>
+        <a href="register.html" class="flex-1 text-center py-2.5 text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg">রেজিস্ট্রেশন</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="pt-32 pb-16 relative overflow-hidden">
+    <div class="orb w-96 h-96 bg-green-500/15 top-0 -right-32"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">বিশ্বস্ততা</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">লাইসেন্স ও <span class="gradient-text">বিশ্বস্ততা</span></h1>
+      <p class="text-gray-400 text-lg max-w-3xl mx-auto">E-Wallet Payment Gateway বাংলাদেশ সরকারের পেমেন্ট গেটওয়ে লাইসেন্স প্রাপ্ত একটি সম্পূর্ণ আইনসম্মত প্রতিষ্ঠান। আমরা ২০১৭ সাল থেকে বাংলাদেশ সরকারের অনুমতি নিয়ে কার্যক্রম পরিচালনা করে আসছি এবং গত তিন বছর ধরে পেমেন্ট গেটওয়ে সার্ভিস প্রদান করে আসছি।</p>
+    </div>
+  </section>
+
+  <!-- 4 PILLARS -->
+  <section class="pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-white mb-3">আমরা ১০০% বিশ্বস্ত সার্ভিস দিয়ে যাচ্ছি</h2>
+        <p class="text-gray-400">আপনার বিশ্বাসই আমাদের সবচেয়ে বড় পুঁজি — এই বিশ্বাসকে আমরা চারটি অঙ্গীকারে রূপ দিয়েছি</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div class="card-glow bg-[#111c32]/60 border border-green-500/10 rounded-2xl p-6 text-center group hover:border-green-500/30 transition-all">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">🏦</div>
+          <h3 class="font-bold text-white mb-2">বাংলাদেশ ব্যাংক অনুমোদিত</h3>
+          <p class="text-gray-400 text-sm">প্রতিটি লেনদেন বাংলাদেশ ব্যাংকের নীতিমালা অনুযায়ী যাচাইকৃত ও সুরক্ষিত।</p>
+        </div>
+        <div class="card-glow bg-[#111c32]/60 border border-green-500/10 rounded-2xl p-6 text-center group hover:border-green-500/30 transition-all">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">😊</div>
+          <h3 class="font-bold text-white mb-2">৯৯%+ সন্তুষ্ট এজেন্ট</h3>
+          <p class="text-gray-400 text-sm">৯৯%+ এজেন্ট আমাদের সার্ভিসে সন্তুষ্ট — আমরা প্রতিশ্রুতি রক্ষা করি।</p>
+        </div>
+        <div class="card-glow bg-[#111c32]/60 border border-green-500/10 rounded-2xl p-6 text-center group hover:border-green-500/30 transition-all">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">👁️</div>
+          <h3 class="font-bold text-white mb-2">সম্পূর্ণ স্বচ্ছ</h3>
+          <p class="text-gray-400 text-sm">কোনো গোপন চার্জ নেই, কোনো ছলচাতুরী নেই — সম্পূর্ণ স্বচ্ছতা।</p>
+        </div>
+        <div class="card-glow bg-[#111c32]/60 border border-green-500/10 rounded-2xl p-6 text-center group hover:border-green-500/30 transition-all">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">⚖️</div>
+          <h3 class="font-bold text-white mb-2">সরকারি অনুমোদিত</h3>
+          <p class="text-gray-400 text-sm">সরকারি অনুমোদন ও লাইসেন্সের আওতায় পরিচালিত — সম্পূর্ণ বৈধ।</p>
+        </div>
+      </div>
+
+      <!-- License & Experience -->
+      <div class="mb-16">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-extrabold text-white mb-3">আমাদের অনুমোদন ও অভিজ্ঞতা</h2>
+          <p class="text-gray-400">সম্পূর্ণ স্বচ্ছতার সাথে পরিচালিত — সকল লাইসেন্স ও অনুমোদন প্রকাশ্য</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-6 hover:border-green-500/30 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🏛️</div>
+              <div>
+                <h3 class="font-bold text-white mb-2">সরকারি অনুমোদন</h3>
+                <p class="text-gray-400 text-sm">২০১৭ সাল থেকে বাংলাদেশ সরকারের নিকট হতে সম্পূর্ণ অনুমোদন প্রাপ্ত। অর্থ মন্ত্রণালয় ও ICT বিভাগের নীতিমালার আলোকে পরিচালিত।</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-6 hover:border-green-500/30 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">📋</div>
+              <div>
+                <h3 class="font-bold text-white mb-2">MFS লাইসেন্স</h3>
+                <p class="text-gray-400 text-sm">MFS (Mobile Financial Service) এবং পেমেন্ট গেটওয়ে লাইসেন্সের আওতায় নিবন্ধিত। সকল লেনদেন নিয়ন্ত্রক কর্তৃপক্ষের তত্ত্বাবধানে সম্পন্ন হয়।</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-6 hover:border-green-500/30 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">⏱️</div>
+              <div>
+                <h3 class="font-bold text-white mb-2">তিন বছরের অভিজ্ঞতা</h3>
+                <p class="text-gray-400 text-sm">গত তিন বছর ধরে স্থায়ীভাবে পেমেন্ট গেটওয়ে সার্ভিস প্রদান করে আসছি। হাজারো এজেন্ট ও লাখো লেনদেন সফলভাবে সম্পন্ন করেছি।</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-6 hover:border-green-500/30 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🛡️</div>
+              <div>
+                <h3 class="font-bold text-white mb-2">সিকিউরিটি সিস্টেম</h3>
+                <p class="text-gray-400 text-sm">SSL এনক্রিপশন, KYC ভেরিফিকেশন ও এডমিন রিভিউ সিস্টেমের মাধ্যমে প্রতিটি লেনদেন সুরক্ষিত।</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laws -->
+      <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-8 mb-16">
+        <h2 class="text-2xl font-extrabold text-white mb-4">বাংলাদেশের সকল আইন মেনে পরিচালিত</h2>
+        <p class="text-gray-400 mb-6">E-Wallet Payment Gateway বাংলাদেশের সকল প্রচলিত আইন, বিধি ও নীতিমালার অনুসরণে পরিচালিত। আমাদের কার্যক্রমে কোনো ধরনের অবৈধতা নেই।</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-gray-300"><span class="text-green-400 text-lg">✓</span> বাংলাদেশ ব্যাংকের MFS নীতিমালা ২০১৮ অনুসরণ</li>
+          <li class="flex items-center gap-3 text-gray-300"><span class="text-green-400 text-lg">✓</span> পেমেন্ট সিস্টেম আইন ২০১২ ও বিধিমালা ২০১৩ মেনে চলা</li>
+          <li class="flex items-center gap-3 text-gray-300"><span class="text-green-400 text-lg">✓</span> ICT আইন ২০০৬ ও ডিজিটাল নিরাপত্তা আইন ২০১৮ অনুযায়ী কার্যক্রম</li>
+          <li class="flex items-center gap-3 text-gray-300"><span class="text-green-400 text-lg">✓</span> AML (Anti-Money Laundering) ও CFT নীতিমালা অনুসরণ</li>
+        </ul>
+      </div>
+
+      <!-- Refund Policy -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-extrabold text-white mb-6">রিফান্ড ও বিরোধ নিষ্পত্তি নীতি</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-6 hover:border-green-500/30 transition-all">
+            <div class="text-3xl mb-3">🔍</div>
+            <h3 class="font-bold text-white mb-2">ডুয়েল রিভিউ</h3>
+            <p class="text-gray-400 text-sm">প্রতিটি লেনদেন স্বয়ংক্রিয় ও ম্যানুয়াল রিভিউ সিস্টেমের মাধ্যমে যাচাই করা হয়।</p>
+          </div>
+          <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-6 hover:border-green-500/30 transition-all">
+            <div class="text-3xl mb-3">💸</div>
+            <h3 class="font-bold text-white mb-2">৭ দিনে রিফান্ড</h3>
+            <p class="text-gray-400 text-sm">ভুল লেনদেন বা প্রযুক্তিগত ত্রুটির ক্ষেত্রে ৭ কার্যদিবসের মধ্যে সম্পূর্ণ ফেরত।</p>
+          </div>
+          <div class="bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-6 hover:border-green-500/30 transition-all">
+            <div class="text-3xl mb-3">⚡</div>
+            <h3 class="font-bold text-white mb-2">দ্রুত সমাধান</h3>
+            <p class="text-gray-400 text-sm">যেকোনো লেনদেন নিয়ে বিরোধ হলে ২৪/৭ সাপোর্ট টিমের মাধ্যমে সমাধান।</p>
+          </div>
+        </div>
+        <div class="mt-6 p-5 bg-blue-500/10 border border-blue-500/20 rounded-xl text-sm text-gray-300 leading-relaxed">
+          <strong class="text-white">রিফান্ড শর্তাবলী:</strong> ১. ভুল নাম্বারে পেমেন্ট গেলে অথবা ডুপ্লিকেট লেনদেন হলে ফেরতযোগ্য। ২. সার্ভার ডাউন বা প্রযুক্তিগত ত্রুটির কারণে ব্যর্থ লেনদেনের সম্পূর্ণ টাকা ফেরত দেওয়া হয়। ৩. এজেন্টদের ক্ষেত্রে কমিশন বা ব্যালেন্স সম্পর্কিত বিরোধ ১ কার্যদিবসের মধ্যে নিষ্পত্তি।
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="mb-16">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-extrabold text-white mb-3">নিরাপত্তা ও বিশ্বস্ততার প্রতিশ্রুতি</h2>
+          <p class="text-gray-400">আমরা আপনার তথ্য ও অর্থের নিরাপত্তা নিশ্চিত করতে সর্বাধুনিক প্রযুক্তি ব্যবহার করি</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="flex items-start gap-3 p-5 bg-[#111c32]/60 border border-green-500/10 rounded-xl hover:border-green-500/30 transition-all">
+            <span class="text-green-400 text-xl mt-0.5">🔐</span>
+            <div><div class="font-semibold text-white text-sm mb-1">256-bit SSL এনক্রিপশন</div><p class="text-gray-500 text-xs">সকল ডেটা 256-bit SSL এনক্রিপশনের মাধ্যমে সংরক্ষিত।</p></div>
+          </div>
+          <div class="flex items-start gap-3 p-5 bg-[#111c32]/60 border border-green-500/10 rounded-xl hover:border-green-500/30 transition-all">
+            <span class="text-green-400 text-xl mt-0.5">✅</span>
+            <div><div class="font-semibold text-white text-sm mb-1">বহুধাপ KYC যাচাই</div><p class="text-gray-500 text-xs">প্রতিটি এজেন্ট ও ব্যবহারকারীর পরিচয় বহুধাপ যাচাইকৃত।</p></div>
+          </div>
+          <div class="flex items-start gap-3 p-5 bg-[#111c32]/60 border border-green-500/10 rounded-xl hover:border-green-500/30 transition-all">
+            <span class="text-green-400 text-xl mt-0.5">👨‍💼</span>
+            <div><div class="font-semibold text-white text-sm mb-1">ম্যানুয়াল এডমিন রিভিউ</div><p class="text-gray-500 text-xs">প্রতিটি লেনদেন ম্যানুয়াল এডমিন রিভিউ সাপেক্ষে অনুমোদিত।</p></div>
+          </div>
+          <div class="flex items-start gap-3 p-5 bg-[#111c32]/60 border border-green-500/10 rounded-xl hover:border-green-500/30 transition-all">
+            <span class="text-green-400 text-xl mt-0.5">🤖</span>
+            <div><div class="font-semibold text-white text-sm mb-1">AI ফ্রড ডিটেকশন</div><p class="text-gray-500 text-xs">AI-ভিত্তিক ফ্রড ডিটেকশন সিস্টেম সন্দেহজনক কার্যক্রম শনাক্ত করে।</p></div>
+          </div>
+          <div class="flex items-start gap-3 p-5 bg-[#111c32]/60 border border-green-500/10 rounded-xl hover:border-green-500/30 transition-all">
+            <span class="text-green-400 text-xl mt-0.5">📊</span>
+            <div><div class="font-semibold text-white text-sm mb-1">২৪/৭ মনিটরিং</div><p class="text-gray-500 text-xs">আমাদের সিকিউরিটি টিম প্রতিনিয়ত সিস্টেম মনিটর করছে।</p></div>
+          </div>
+          <div class="flex items-start gap-3 p-5 bg-[#111c32]/60 border border-green-500/10 rounded-xl hover:border-green-500/30 transition-all">
+            <span class="text-green-400 text-xl mt-0.5">📋</span>
+            <div><div class="font-semibold text-white text-sm mb-1">নিয়মিত অডিট</div><p class="text-gray-500 text-xs">বাংলাদেশ ব্যাংক ও তৃতীয় পক্ষের অডিটার দ্বারা নিয়মিত অডিট।</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-extrabold text-white mb-8 text-center">সংখ্যায় আমাদের বিশ্বস্ততা</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 rounded-2xl">
+            <div class="text-4xl font-extrabold text-green-400 mb-2 counter">20,000+</div>
+            <div class="text-gray-400 text-sm">বিশ্বস্ত এজেন্ট</div>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 rounded-2xl">
+            <div class="text-4xl font-extrabold text-green-400 mb-2 counter">৩+ বছর</div>
+            <div class="text-gray-400 text-sm">নির্ভরযোগ্য সার্ভিস</div>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 rounded-2xl">
+            <div class="text-4xl font-extrabold text-green-400 mb-2 counter">৯৯%+</div>
+            <div class="text-gray-400 text-sm">সন্তুষ্ট এজেন্ট</div>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 rounded-2xl">
+            <div class="text-4xl font-extrabold text-green-400 mb-2 counter">১৪+</div>
+            <div class="text-gray-400 text-sm">Partner Platforms</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partners -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-extrabold text-white mb-4 text-center">আমাদের অফিসিয়াল পার্টনার ও অনুমোদন</h2>
+        <p class="text-gray-400 text-center mb-8">দেশের শীর্ষস্থানীয় আর্থিক প্রতিষ্ঠানগুলোর সাথে আমাদের রয়েছে সরাসরি অফিসিয়াল চুক্তি</p>
+        <div class="flex flex-wrap justify-center gap-4 mb-6">
+          <div class="flex items-center gap-2 bg-pink-500/10 border border-pink-500/20 rounded-xl px-5 py-3"><span class="text-xl">📱</span><span class="font-bold text-white">bKash</span></div>
+          <div class="flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-xl px-5 py-3"><span class="text-xl">💚</span><span class="font-bold text-white">Nagad</span></div>
+          <div class="flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-xl px-5 py-3"><span class="text-xl">🚀</span><span class="font-bold text-white">Rocket</span></div>
+          <div class="flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-5 py-3"><span class="text-xl">₿</span><span class="font-bold text-white">Binance</span></div>
+          <div class="flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-xl px-5 py-3"><span class="text-xl">🏛️</span><span class="font-bold text-white">Bangladesh Bank</span></div>
+        </div>
+        <p class="text-gray-400 text-sm text-center max-w-3xl mx-auto">উপরোক্ত সকল প্রতিষ্ঠানের সাথে আমাদের রয়েছে সরাসরি অফিসিয়াল চুক্তি ও অনুমোদন। ফলে আপনার প্রতিটি লেনদেন সম্পূর্ণ নিরাপদ ও বিশ্বস্ত পরিবেশে সম্পন্ন হয়।</p>
+      </div>
+
+      <!-- Closing Statement -->
+      <div class="text-center p-8 bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 rounded-2xl">
+        <p class="text-gray-300 mb-6 max-w-3xl mx-auto">E-Wallet Payment Gateway দীর্ঘ বছরের অভিজ্ঞতা, সরকারি অনুমোদন এবং হাজারো সন্তুষ্ট এজেন্টের আস্থায় গড়ে উঠেছে। আমরা শুধু পেমেন্ট গেটওয়ে নই — আমরা আপনার আর্থিক নিরাপত্তার সহযাত্রী।</p>
+        <a href="register.html" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl btn-glow hover:from-green-400 hover:to-green-500 transition-all">আজই যোগ দিন</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0d1526]/60 border-t border-green-500/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div><a href="index.html" class="flex items-center gap-3 mb-3 w-fit"><div class="w-9 h-9 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">💳</div><div><div class="text-white font-bold leading-tight">E-Wallet</div><div class="text-green-400 text-xs">Payment Gateway</div></div></a><p class="text-gray-500 text-sm">বাংলাদেশের এজেন্টদের জন্য নিরাপদ পেমেন্ট প্ল্যাটফর্ম।</p></div>
+        <div><h4 class="text-white font-semibold mb-3">প্ল্যাটফর্ম</h4><ul class="space-y-2"><li><a href="services.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">সার্ভিসসমূহ</a></li><li><a href="how-it-works.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">কিভাবে কাজ করে</a></li><li><a href="commission-rates.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">কমিশন গাইড</a></li><li><a href="login.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">লগইন</a></li><li><a href="register.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">রেজিস্ট্রেশন</a></li></ul></div>
+        <div><h4 class="text-white font-semibold mb-3">আইনি তথ্য</h4><ul class="space-y-2"><li><a href="terms.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Terms of Service</a></li><li><a href="privacy.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Privacy Policy</a></li><li><a href="official-notice.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Official Domain Notice</a></li><li><a href="contact.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Contact Us</a></li></ul></div>
+        <div><h4 class="text-white font-semibold mb-3">যোগাযোগ</h4><ul class="space-y-2"><li><a href="https://wa.me/447446316977" target="_blank" class="text-gray-500 hover:text-green-400 text-sm transition-colors">📱 WhatsApp</a></li><li><a href="https://t.me/ewalletbd247" target="_blank" class="text-gray-500 hover:text-green-400 text-sm transition-colors">✈️ @ewalletbd247</a></li><li><a href="mailto:support@ewalletpay24.com" class="text-gray-500 hover:text-green-400 text-sm transition-colors">📧 support@ewalletpay24.com</a></li></ul></div>
+      </div>
+      <div class="border-t border-white/5 pt-6 text-center"><p class="text-gray-600 text-sm">© 2024 E-Wallet Payment Gateway. All rights reserved.</p></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>কিভাবে কাজ করে — E-Wallet Payment Gateway</title>
+  <meta name="description" content="E-Wallet Payment Gateway এজেন্ট হওয়ার সম্পূর্ণ ধাপে ধাপে গাইড — রেজিস্ট্রেশন থেকে কমিশন উপার্জন পর্যন্ত।" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Hind Siliguri', 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #22c55e, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-bg { background: linear-gradient(135deg, #0a0f1e 0%, #0d1a2e 50%, #0a1628 100%); }
+    .btn-glow { box-shadow: 0 0 20px rgba(34,197,94,0.4); }
+    .btn-glow:hover { box-shadow: 0 0 35px rgba(34,197,94,0.6); transform: translateY(-2px); transition: all 0.3s; }
+    .orb { border-radius:50%; filter:blur(80px); position:absolute; pointer-events:none; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .step-card { transition: all 0.3s; }
+    .step-card:hover { transform: translateX(6px); }
+  </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-[#0a0f1e]/80 border-b border-green-500/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center text-xl">💳</div>
+          <div><div class="text-white font-bold text-lg leading-tight">E-Wallet</div><div class="text-green-400 text-xs font-medium">Payment Gateway</div></div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">হোম</a>
+          <a href="services.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">সার্ভিস</a>
+          <a href="how-it-works.html" class="text-green-400 font-medium text-sm border-b-2 border-green-400 pb-0.5">কিভাবে কাজ করে</a>
+          <a href="trust.html" class="text-gray-300 hover:text-green-400 transition-colors text-sm font-medium">বিশ্বস্ততা</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="login.html" class="px-5 py-2 text-sm font-medium text-green-400 border border-green-500/50 rounded-lg hover:bg-green-500/10 transition-all">লগইন</a>
+          <a href="register.html" class="px-5 py-2 text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg btn-glow">রেজিস্ট্রেশন</a>
+        </div>
+        <button onclick="document.getElementById('m').classList.toggle('hidden')" class="md:hidden p-2 text-gray-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="m" class="hidden md:hidden bg-[#0d1526]/95 border-t border-green-500/10 px-4 py-4 space-y-2">
+      <a href="index.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">হোম</a>
+      <a href="services.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">সার্ভিস</a>
+      <a href="how-it-works.html" class="block py-2.5 px-4 rounded-lg text-green-400 bg-green-500/10">কিভাবে কাজ করে</a>
+      <a href="trust.html" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-white/5">বিশ্বস্ততা</a>
+      <div class="flex gap-3 pt-2">
+        <a href="login.html" class="flex-1 text-center py-2.5 text-sm text-green-400 border border-green-500/50 rounded-lg">লগইন</a>
+        <a href="register.html" class="flex-1 text-center py-2.5 text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg">রেজিস্ট্রেশন</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="pt-32 pb-16 relative overflow-hidden">
+    <div class="orb w-80 h-80 bg-green-500/15 top-0 -left-20"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">গাইড</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">কিভাবে <span class="gradient-text">কাজ করে</span></h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">একটি সহজ, ধাপে ধাপে গাইড — শুরু থেকে সফল এজেন্ট হওয়া পর্যন্ত।</p>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6">
+
+        <!-- Step 1 -->
+        <div class="step-card bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-8 flex gap-6 hover:border-green-500/40">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-green-500/30">📝</div>
+            <div class="w-px h-full bg-green-500/20 mx-auto mt-4 hidden"></div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-sm font-extrabold text-[#0a0f1e]">১</span>
+              <h3 class="text-xl font-bold text-white">অ্যাকাউন্ট তৈরি করুন</h3>
+            </div>
+            <p class="text-gray-400 leading-relaxed">আপনার নাম, ইমেইল, ফোন নাম্বার দিয়ে অ্যাকাউন্ট তৈরি করুন। প্রক্রিয়াটি সম্পূর্ণ বিনামূল্যে।</p>
+          </div>
+        </div>
+
+        <!-- Connector -->
+        <div class="flex justify-center"><div class="w-px h-8 bg-gradient-to-b from-green-500/40 to-transparent"></div></div>
+
+        <!-- Step 2 -->
+        <div class="step-card bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-8 flex gap-6 hover:border-green-500/40">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-blue-500/30">🪪</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-sm font-extrabold text-[#0a0f1e]">২</span>
+              <h3 class="text-xl font-bold text-white">KYC ভেরিফিকেশন</h3>
+            </div>
+            <p class="text-gray-400 leading-relaxed">NID/পাসপোর্ট আপলোড করে পরিচয় যাচাই করুন। এডমিন ভেরিফিকেশনের পর অ্যাকাউন্ট অ্যাক্টিভ হবে।</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center"><div class="w-px h-8 bg-gradient-to-b from-green-500/40 to-transparent"></div></div>
+
+        <!-- Step 3 -->
+        <div class="step-card bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-8 flex gap-6 hover:border-green-500/40">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-yellow-500/30">💳</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-sm font-extrabold text-[#0a0f1e]">৩</span>
+              <h3 class="text-xl font-bold text-white">ওয়ালেট লোড করুন</h3>
+            </div>
+            <p class="text-gray-400 leading-relaxed">bKash, Nagad বা Binance দিয়ে আপনার ওয়ালেটে ব্যালেন্স যোগ করুন। সকল ডিপোজিট এডমিন রিভিউ-এর আওতায়।</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center"><div class="w-px h-8 bg-gradient-to-b from-green-500/40 to-transparent"></div></div>
+
+        <!-- Step 4 -->
+        <div class="step-card bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-8 flex gap-6 hover:border-green-500/40">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-purple-500/30">📱</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-sm font-extrabold text-[#0a0f1e]">৪</span>
+              <h3 class="text-xl font-bold text-white">পেমেন্ট নাম্বার অ্যাক্টিভ করুন</h3>
+            </div>
+            <p class="text-gray-400 leading-relaxed">আপনার পেমেন্ট নাম্বার (bKash/Nagad/Rocket) প্ল্যাটফর্মে অ্যাক্টিভ করুন।</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center"><div class="w-px h-8 bg-gradient-to-b from-green-500/40 to-transparent"></div></div>
+
+        <!-- Step 5 -->
+        <div class="step-card bg-[#111c32]/60 border border-green-500/15 rounded-2xl p-8 flex gap-6 hover:border-green-500/40">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-cyan-500/30">⚡</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-sm font-extrabold text-[#0a0f1e]">৫</span>
+              <h3 class="text-xl font-bold text-white">রিকোয়েস্ট হ্যান্ডেল করুন</h3>
+            </div>
+            <p class="text-gray-400 leading-relaxed">ইউজারদের Deposit/Withdraw রিকোয়েস্ট গ্রহণ ও সম্পন্ন করুন।</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center"><div class="w-px h-8 bg-gradient-to-b from-green-500/40 to-transparent"></div></div>
+
+        <!-- Step 6 -->
+        <div class="step-card bg-gradient-to-br from-green-500/15 to-green-600/5 border border-green-500/30 rounded-2xl p-8 flex gap-6 shadow-xl shadow-green-500/10">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-green-500/40">💵</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-sm font-extrabold text-[#0a0f1e]">৬</span>
+              <h3 class="text-xl font-bold text-white">কমিশন উপার্জন করুন 🎉</h3>
+            </div>
+            <p class="text-gray-400 leading-relaxed">প্রতিটি সফল লেনদেনে কমিশন পান এবং সরাসরি Withdraw করুন।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Commission Note -->
+      <div class="mt-10 p-6 bg-blue-500/10 border border-blue-500/20 rounded-2xl">
+        <p class="text-gray-300 text-sm">কমিশন কিভাবে হিসাব হয় জানতে দেখুন <a href="commission-rates.html" class="text-green-400 hover:text-green-300 font-medium underline underline-offset-2">এজেন্ট কমিশন গাইড</a>।</p>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="register.html" class="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg rounded-xl btn-glow hover:from-green-400 hover:to-green-500 transition-all">এখনই শুরু করুন</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0d1526]/60 border-t border-green-500/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div><a href="index.html" class="flex items-center gap-3 mb-3 w-fit"><div class="w-9 h-9 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">💳</div><div><div class="text-white font-bold leading-tight">E-Wallet</div><div class="text-green-400 text-xs">Payment Gateway</div></div></a><p class="text-gray-500 text-sm">বাংলাদেশের এজেন্টদের জন্য নিরাপদ পেমেন্ট প্ল্যাটফর্ম।</p></div>
+        <div><h4 class="text-white font-semibold mb-3">প্ল্যাটফর্ম</h4><ul class="space-y-2"><li><a href="services.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">সার্ভিসসমূহ</a></li><li><a href="how-it-works.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">কিভাবে কাজ করে</a></li><li><a href="commission-rates.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">কমিশন গাইড</a></li><li><a href="login.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">লগইন</a></li><li><a href="register.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">রেজিস্ট্রেশন</a></li></ul></div>
+        <div><h4 class="text-white font-semibold mb-3">আইনি তথ্য</h4><ul class="space-y-2"><li><a href="terms.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Terms of Service</a></li><li><a href="privacy.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Privacy Policy</a></li><li><a href="official-notice.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Official Domain Notice</a></li><li><a href="contact.html" class="text-gray-500 hover:text-green-400 text-sm transition-colors">Contact Us</a></li></ul></div>
+        <div><h4 class="text-white font-semibold mb-3">যোগাযোগ</h4><ul class="space-y-2"><li><a href="https://wa.me/447446316977" target="_blank" class="text-gray-500 hover:text-green-400 text-sm transition-colors">📱 WhatsApp</a></li><li><a href="https://t.me/ewalletbd247" target="_blank" class="text-gray-500 hover:text-green-400 text-sm transition-colors">✈️ @ewalletbd247</a></li><li><a href="mailto:support@ewalletpay24.com" class="text-gray-500 hover:text-green-400 text-sm transition-colors">📧 support@ewalletpay24.com</a></li></ul></div>
+      </div>
+      <div class="border-t border-white/5 pt-6 text-center"><p class="text-gray-600 text-sm">© 2024 E-Wallet Payment Gateway. All rights reserved.</p></div>
+    </div>
+  </footer>
+</body>
+</html>
